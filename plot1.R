@@ -18,7 +18,7 @@ library(dplyr)
 plot1Data <- filter(powerData, Date == "2007-02-01" | Date == "2007-02-02")
 
 # generate plot in local display
-hist(powerDataFeb1Feb2$Global_active_power, col = "red", 
+hist(plot1Data$Global_active_power, col = "red", 
      xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 
 # save as png file (default appears to be 480 x 480)
