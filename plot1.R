@@ -9,10 +9,10 @@ setwd("/Users/robysf/Documents/Fellowship/Coursera/Exploratory_Data_Analysis/Pro
 powerData <- read.table("household_power_consumption.txt", sep = ";", header = TRUE, stringsAsFactors = FALSE)
 
 # convert plotted parameter to numeric from character
-as.numeric(powerData$Global_active_power)
+powerData$Global_active_power <- as.numeric(powerData$Global_active_power)
 
 # subset data to include only Feb 1 and Feb 2, 2007
-as.Date(powerData$Date, format = "%d/%m/%Y")
+powerData$Date <- as.Date(powerData$Date, format = "%d/%m/%Y")
 install.packages("dplyr")
 library(dplyr)
 plot1Data <- filter(powerData, Date == "2007-02-01" | Date == "2007-02-02")
