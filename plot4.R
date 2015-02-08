@@ -18,7 +18,7 @@ plot1Data$Voltage <- as.numeric(plot1Data$Voltage)
 
 # subset data to include only Feb 1 and Feb 2, 2007
 powerData$Date <- as.Date(powerData$Date, format = "%d/%m/%Y")
-install.packages("dplyr")
+if(!require(dplyr)) install.packages("dplyr")
 library(dplyr)
 plotData <- filter(powerData, Date == "2007-02-01" | Date == "2007-02-02")
 
